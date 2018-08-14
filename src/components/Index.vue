@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     s() {
-      return typeof +this.size === 'number' ? `${this.size}px` : this.size;
+      return +this.size > 0 ? `${this.size}px` : this.size;
     },
   },
 };
