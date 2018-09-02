@@ -17,5 +17,6 @@ module.exports = {
     'camelcase': 'off',
     'no-mixed-operators': 'off',
     'no-tags': 'off',
+    'semi': 'off',
   },
 };
