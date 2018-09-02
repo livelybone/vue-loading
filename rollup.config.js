@@ -7,7 +7,7 @@ const formats = ['amd', 'cjs', 'es', 'iife', 'umd', 'system']
 
 export default {
   input: './src/components/Index.vue',
-  output: formats.map(format => ({
+  output: formats.filter(format => (NODE_ENV !== 'production' || format !== 'es')).map(format => ({
     file: `./lib/index.${format}.${NODE_ENV === 'production' ? 'min.' : ''}js`,
     format,
     name: 'VueLoading',
