@@ -7,4 +7,4 @@ https://github.com/livelybone/vue-loading.git
 ## Demo
 https://github.com/livelybone/vue-loading#readme
 
-## TODO
+Just use it.
