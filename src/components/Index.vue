@@ -1,5 +1,5 @@
 <template>
-  <svg :width="s" :height="s" viewBox="0 0 512 512" class="loading" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+  <svg :width="s" :height="s" viewBox="0 0 512 512" class="loading" style="enable-background:new 0 0 512 512;" :style="{width: s, height: s}" xml:space="preserve">
 		<circle class="circle st0" :fill="color" cx="256" cy="472" r="40"/>
 		<circle transform="matrix(0.5878 -0.809 0.809 0.5878 -295.2906 281.9548)" class="circle st1" :fill="color" cx="129" cy="430.7" r="40"/>
 		<circle transform="matrix(0.9511 -0.309 0.309 0.9511 -97.2594 31.4239)" class="circle st2" :fill="color" cx="50.6" cy="322.7" r="40"/>
@@ -25,10 +25,10 @@ export default {
   },
   computed: {
     s() {
-      return +this.size > 0 ? `${this.size}px` : this.size;
+      return +this.size > 0 ? `${this.size}px` : this.size
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
