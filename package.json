@@ -7,7 +7,7 @@
   "unpkg": "./lib/index.umd.min.js",
   "scripts": {
     "build:webpack": "./node_modules/.bin/webpack  --progress --mode production",
-    "build": "cross-env NODE_ENV='production' rollup -c && rollup -c",
+    "build": "rimraf ./lib && cross-env NODE_ENV=production rollup -c",
     "eslint": "./node_modules/.bin/eslint ./src/index.vue",
     "test": "cross-env BABEL_ENV=test karma start --single-run"
   },

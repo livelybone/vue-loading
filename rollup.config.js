@@ -1,31 +1,25 @@
-import vue from 'rollup-plugin-vue'
-import babel from 'rollup-plugin-babel'
+/* For build */
 import { uglify } from 'rollup-plugin-uglify'
 
-const { NODE_ENV = '' } = process.env
-const formats = ['amd', 'cjs', 'es', 'iife', 'umd', 'system']
+const baseConf = require('./rollup.config.base')
 
-export default {
-  input: './src/components/Index.vue',
-  output: formats.filter(format => (NODE_ENV !== 'production' || format !== 'es')).map(format => ({
-    file: `./lib/index.${format}.${NODE_ENV === 'production' ? 'min.' : ''}js`,
+const conf = entry => Object.assign({}, baseConf, {
+  input: entry.filename,
+  output: entry.formats.map(format => ({
+    file: `./lib/${format}/${entry.name}.js`,
     format,
     name: 'VueLoading',
   })),
-  plugins: [
-    vue({ css: true }),
-    babel({
-      babelrc: false,
-      runtimeHelpers: true,
-      externalHelpers: false,
-      presets: [
-        ['env', { modules: false }],
-        'stage-2',
-      ],
-      plugins: [
-        'external-helpers',
-      ],
-    }),
-    (NODE_ENV === 'production' && uglify()),
-  ],
-}
+  plugins: baseConf.plugins.concat([(entry.needUglify !== false && uglify())]),
+})
+
+export default [
+  {
+    name: 'index',
+    filename: './src/components/Index.vue',
+    formats: ['es'],
+    needUglify: false,
+    external: true,
+  },
+  { name: 'index', filename: './src/components/Index.vue', formats: ['umd'] },
+].map(conf)
