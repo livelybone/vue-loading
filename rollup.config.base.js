@@ -20,6 +20,7 @@ module.exports = {
         'stage-2',
       ],
       plugins: [
+        'array-includes',
         'external-helpers',
       ],
     }),
