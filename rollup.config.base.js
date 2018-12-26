@@ -1,6 +1,7 @@
 /* For build */
 const babel = require('rollup-plugin-babel')
 const vuePlugin = require('rollup-plugin-vue')
+const license = require('rollup-plugin-license')
 
 const vue = vuePlugin.default || vuePlugin
 
@@ -23,6 +24,13 @@ module.exports = {
         'array-includes',
         'external-helpers',
       ],
+    }),
+    license({
+      banner: `Bundle of <%= pkg.name %>
+               Generated: <%= moment().format('YYYY-MM-DD') %>
+               Version: <%= pkg.version %>
+               License: <%= pkg.license %>
+               Author: <%= pkg.author %>`,
     }),
   ],
 }

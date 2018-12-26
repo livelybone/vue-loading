@@ -5,6 +5,12 @@ A vue loading component
 https://github.com/livelybone/vue-loading.git
 
 ## Demo
-https://github.com/livelybone/vue-loading#readme
+https://livelybone.github.io/vue/vue-loading
+
+## Props
+| Name              | Type                                      | DefaultValue         | Description  |
+| ----------------- | ----------------------------------------- | -------------------- | ------------ |
+| `size`            | `[String, Number]`                        | `100`                |  |
+| `color`           | `String`                                  | none                 |  |
 
 Just use it.
