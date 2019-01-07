@@ -1,6 +1,6 @@
 {
   "name": "@livelybone/vue-loading",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "A vue loading component",
   "main": "./lib/umd/index.js",
   "module": "./lib/es/index.js",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/livelybone/vue-loading/issues"
   },
-  "homepage": "https://github.com/livelybone/vue-loading#readme",
+  "homepage": "https://livelybone.github.io/vue/vue-loading/",
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.19",
     "babel-core": "^6.26.3",

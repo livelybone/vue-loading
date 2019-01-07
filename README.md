@@ -5,7 +5,7 @@ A vue loading component
 https://github.com/livelybone/vue-loading.git
 
 ## Demo
-https://livelybone.github.io/vue/vue-loading
+https://livelybone.github.io/vue/vue-loading/
 
 ## Props
 | Name              | Type                                      | DefaultValue         | Description  |
